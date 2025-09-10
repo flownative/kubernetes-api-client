@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Flownative\\Harbor\\Api\\": "src/"
+            "Flownative\\Kubernetes\\Api\\": "src/"
         }
     },
     "prefer-stable": true,

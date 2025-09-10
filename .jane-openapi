@@ -1,0 +1,50 @@
+<?php
+
+return [
+    'openapi-file' => __DIR__ . '/kubernetes-v1.33.json',
+    'namespace' => 'Flownative\Kubernetes\Api',
+    'directory' => __DIR__ . '/src/',
+    'reference' => true,
+    'strict' => false,
+    'use-fixer' => true,
+    'date-prefer-interface' => true,
+    'date-format' => 'Y-m-d\TH:i:s.vP',
+    'clean-generated' => true,
+    'throw-unexpected-status-code' => true,
+    'whitelisted-paths' => [
+        // Cluster info endpoint
+        ['^\/version$', ['GET']],
+        ['^\/version\/$', ['GET']],
+        
+        // Pods
+        ['^\/api\/v1\/namespaces\/\{namespace\}\/pods$', ['GET', 'POST']],
+        ['^\/api\/v1\/namespaces\/\{namespace\}\/pods\/\{name\}$', ['GET', 'PUT', 'DELETE', 'PATCH']],
+        ['^\/api\/v1\/pods$', ['GET']],
+        
+        // Deployments
+        ['^\/apis\/apps\/v1\/namespaces\/\{namespace\}\/deployments$', ['GET', 'POST']],
+        ['^\/apis\/apps\/v1\/namespaces\/\{namespace\}\/deployments\/\{name\}$', ['GET', 'PUT', 'DELETE', 'PATCH']],
+        ['^\/apis\/apps\/v1\/deployments$', ['GET']],
+        
+        // Namespaces
+        ['^\/api\/v1\/namespaces$', ['GET', 'POST']],
+        ['^\/api\/v1\/namespaces\/\{name\}$', ['GET', 'PUT', 'DELETE', 'PATCH']],
+        
+        // Services
+        ['^\/api\/v1\/namespaces\/\{namespace\}\/services$', ['GET', 'POST']],
+        ['^\/api\/v1\/namespaces\/\{namespace\}\/services\/\{name\}$', ['GET', 'PUT', 'DELETE', 'PATCH']],
+        ['^\/api\/v1\/services$', ['GET']],
+        
+        // Nodes
+        ['^\/api\/v1\/nodes$', ['GET']],
+        ['^\/api\/v1\/nodes\/\{name\}$', ['GET', 'PUT', 'DELETE', 'PATCH']],
+        
+        // ConfigMaps
+        ['^\/api\/v1\/namespaces\/\{namespace\}\/configmaps$', ['GET', 'POST']],
+        ['^\/api\/v1\/namespaces\/\{namespace\}\/configmaps\/\{name\}$', ['GET', 'PUT', 'DELETE', 'PATCH']],
+        
+        // Secrets
+        ['^\/api\/v1\/namespaces\/\{namespace\}\/secrets$', ['GET', 'POST']],
+        ['^\/api\/v1\/namespaces\/\{namespace\}\/secrets\/\{name\}$', ['GET', 'PUT', 'DELETE', 'PATCH']],
+    ]
+];
