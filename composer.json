@@ -1,0 +1,26 @@
+{
+    "name": "flownative/kubernetes-api-client",
+    "description": "This package provides API models and a client for Kubernetes",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Flownative\\Harbor\\Api\\": "src/"
+        }
+    },
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.3",
+        "jane-php/open-api-runtime": "7.9.*"
+    },
+    "require-dev": {
+        "jane-php/open-api-2": "7.9.*",
+        "friendsofphp/php-cs-fixer": "^3.59"
+    },
+    "config": {
+        "bin-dir": "bin",
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    }
+}
